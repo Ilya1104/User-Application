@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Users register";
+}
+@model User
+
+<div>
+    <h1>Users Registration</h1>
+    <div>
+        <form asp-controller="Account" asp-action="Register" method="post">
+            <input hidden asp-for="Id" value="@Guid.NewGuid()" />
+            <div asp-validation-summary="All"></div>
+
+            <div>
+                <label asp-for="Name"></label>
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div>
+                <label asp-for="Surname"></label>
+                <input asp-for="Surname" />
+                <span asp-validation-for="Surname"></span>
+            </div>
+            <div>
+                <label asp-for="Age"></label>
+                <input asp-for="Age" />
+                <span asp-validation-for="Age"></span>
+            </div>
+            <div>
+                <label asp-for="Login"></label>
+                <input asp-for="Login" />
+                <span asp-validation-for="Login"></span>
+            </div>
+            <div>
+                <label asp-for="Password"></label>
+                <input asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+            <input hidden asp-for="RoleId" value="1c1f366b-7e15-455d-b193-20520c3d1b20"/>
+            <span asp-validation-for="RoleId"></span>
+
+            <input type="submit" value="Sign up" />
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Roles";
+}
+@model IEnumerable<UserRole>
+
+    <div class="top_2">
+        <a asp-controller="Admin" asp-action="CreateRole">Добавить роль</a>
+    </div>
+    <div>
+        <from method="post">
+            <table>
+                <tr>
+                    <th>Role Name</th>
+                </tr>
+                @foreach (var b in Model)
+                {
+                    <tr>
+                        <td> @Html.DisplayFor(modelItem => b.Name)</td>
+                        <td><a asp-controller="Admin" asp-action="DeleteRole" asp-route-id="@b.Id">Удалить</a></td>
+                    </tr>
+                }
+            </table>
+        </from>
+    </div>

@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Users Edit";
+}
+
+@model User
+@using (Html.BeginForm())
+{
+<fieldset>
+    <legend>User</legend>
+
+    @Html.HiddenFor(model => model.Id)
+
+    <p>
+        User Name <br />
+        @Html.EditorFor(model => model.Name)
+    </p>
+
+    <p>
+        User Surname <br />
+        @Html.EditorFor(model => model.Surname)
+    </p>
+
+    <p>
+        User Age  <br />
+        @Html.EditorFor(model => model.Age)
+    </p>
+    <p>
+        Login <br />
+        @Html.EditorFor(model => model.Login)
+    </p>
+    <p>
+        Password <br />
+        @Html.EditorFor(model => model.Password)
+    </p>
+    <p hidden>       
+        @Html.EditorFor(model => model.RoleId)
+    </p>
+    <p>
+        <input type="submit" value="Сохранить" />
+    </p>
+</fieldset>
+}

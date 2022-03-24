@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "New Role";
+}
+@model UserRole
+
+<div>
+    <h1>Create role</h1>
+    <div>
+        <form asp-controller="Admin" asp-action="CreateRole" method="post">
+            <input hidden asp-for="Id" value="@Guid.NewGuid()" />
+            <div asp-validation-summary="All"></div>
+
+            <div>
+                <label asp-for="Name"></label>
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"></span>
+            </div>       
+            <input type="submit" value="Create" />
+        </form>
+    </div>
+</div>

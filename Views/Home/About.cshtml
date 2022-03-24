@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "About page";
+}
+<h1>@ViewData["Title"]</h1>
+<style>
+    .box{
+        display:flex;
+        flex-direction:column;
+        width:100px;
+        height:300px;
+        text-align:center;
+        border:3px dotted black;
+        background:gray;
+    }
+    .cl1,.cl2, .cl3{
+        border-radius:50%;
+        width:80px;
+        height:80px;
+        margin:auto;
+    }
+    .cl1{
+        background:red;
+    }
+    .cl2 {
+        background: yellow;
+    }
+    .cl3 {
+        background: green;
+    }
+</style>
+<p>This page describes company and project</p>
+<div class="box">
+    <div class="cl1"></div>
+    <div class="cl2"></div>
+    <div class="cl3"></div>
+</div>
+<h1>Rate from 1 to 10 this excellent vertical traffic light :)</h1>
+
+

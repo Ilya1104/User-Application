@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Admin Panel";
+}
+@model IEnumerable<User>
+
+    <div class="top_2">
+        <a asp-controller="Admin" asp-action="GetRole">Перечень ролей</a>
+    </div>
+    <div>
+        <from method="post">
+            <table>
+                <tr>
+                    <th>User Name</th>
+                    <th>User Surname</th>
+                    <th>User Age</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                @foreach (var b in Model)
+                {
+                    <tr>
+                        <td> @Html.DisplayFor(modelItem => b.Name)</td>
+                        <td> @Html.DisplayFor(modelItem => b.Surname)</td>
+                        <td> @Html.DisplayFor(modelItem => b.Age)</td>
+                        <td> @Html.DisplayFor(modelItem => b.UserRoles.Name)</td>
+                        <td><a asp-controller="Admin" asp-action="UsersEdit" asp-route-id="@b.Id">редактировать</a></td>
+                    </tr>
+                }
+            </table>
+        </from>
+    </div>
